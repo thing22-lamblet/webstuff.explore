@@ -3,15 +3,18 @@
     <body style="color:white;background-color:black">
         <script>
     function movethemonke(){
-        window.alert("this sentence is not real");
+        //window.alert("this sentence is not real");
+        const monke=document.gitElementById("monke");
+        monke.style.visibility="hidden";
     }
 
         </script>
-        <button onclick="movethemonke()">
-                the monke mover
-        </button>
+
        word<p />
-       <img src="https://i.pinimg.com/originals/40/53/e7/4053e7002948f8d86f27763375774bff.jpg"></img>
+       <img id="monke"  src="https://i.pinimg.com/originals/40/53/e7/4053e7002948f8d86f27763375774bff.jpg"></img>
+       <button onclick="movethemonke()">
+        the monke mover
+        </button>
     </body>
 
-</html>
+    </html>
