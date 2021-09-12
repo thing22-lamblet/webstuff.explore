@@ -1,20 +1,58 @@
 <html>
-    <title>a page</title>
-    <body style="color:white;background-color:black">
-        <script>
-    function movethemonke(){
-        //window.alert("this sentence is not real");
-        const monke=document.gitElementById("monke");
-        monke.style.visibility="hidden";
+<title>a page</title>
+<style>
+    #monke {
+        width: "40%";
     }
 
-        </script>
+    #container {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background: yellow;
+    }
 
-       word<p />
-       <img id="monke"  src="https://i.pinimg.com/originals/40/53/e7/4053e7002948f8d86f27763375774bff.jpg"></img>
-       <button onclick="movethemonke()">
+    #animate {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: red;
+    }
+</style>
+
+<body style="color:white;background-color:black">
+    <script>
+        function movethemonke() {
+            //window.alert("this sentence is not real");
+            const monke = document.getElementById("animate");
+            // monke.style.visibility = "hidden";
+            let pos = 0;
+            clearInterval(null);
+            let id = setInterval(frame, 5);
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id)
+                        ;
+                } else {
+                    pos++;
+                    monke.style.top = pos + "px";
+                    monke.style.left = pos + "px";
+                }
+            }
+        }
+
+    </script>
+
+    <div id="container">
+        <div id="animate">
+            <img id="monke" src="https://i.pinimg.com/originals/40/53/e7/4053e7002948f8d86f27763375774bff.jpg"></img>
+        </div>
+    </div>
+    <p />
+
+    <button onclick="movethemonke()">
         the monke mover
-        </button>
-    </body>
+    </button>
+</body>
 
-    </html>
+</html>
