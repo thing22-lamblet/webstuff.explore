@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <title>a page</title>
 <style>
 #container {
   width: 400px;
@@ -14,32 +15,32 @@
   background-color: red;
 }
 </style>
-<body>
-
-<p><button onclick="myMove()">Click Me</button></p> 
-
-<div id ="container">
-  <div id ="animate"></div>
-</div>
-
 <script>
-function myMove() {
-  let id = null;
-  const elem = document.getElementById("animate");   
-  let pos = 0;
-  clearInterval(id);
-  id = setInterval(frame, 5);
-  function frame() {
-    if (pos == 350) {
-      clearInterval(id);
-    } else {
-      pos++; 
-      elem.style.top = pos + "px"; 
-      elem.style.left = pos + "px"; 
+    function movethemonke(){
+        //window.alert("this sentence is not real");
+        const monke=document.getElementById("animate");
+        let pos = 0;
+        clearInterval(null);
+        let id = setInterval(frame, 5);
+        function frame() {
+            if (pos == 350) {
+                clearInterval(id);
+            } else {
+                pos++; 
+                monke.style.top = pos + "px"; 
+                monke.style.left = pos + "px"; 
+            }
+        }
     }
-  }
-}
 </script>
 
+<body>
+<div id ="container">
+  <div id ="animate">
+       <img id="monke"  src="https://i.pinimg.com/originals/40/53/e7/4053e7002948f8d86f27763375774bff.jpg"></img>
+  </div>
+</div>
+
+<button onclick="movethemonke()"> the monke mover </button>
 </body>
 </html>
