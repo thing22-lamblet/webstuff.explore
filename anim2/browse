@@ -1,0 +1,20 @@
+#!/bin/bash
+# Launch browser for this lab
+
+die() {
+    echo "ERROR: $@" >&2
+    exit 1
+}
+
+
+[[ -x ../chrome ]] || {
+    (
+        cd ..
+        ln -sf '/c/Program Files (x86)/Google/Chrome/Application/chrome.exe' ./chrome || die 102
+    )
+}
+
+
+
+../chrome $( wslpath -w $PWD/anim*.html )
+
