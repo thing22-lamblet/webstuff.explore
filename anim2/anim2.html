@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<canvas id="gameboard" width="360" height="180" style="border:1px solid #d3d3d3;"></canvas>
+    <canvas id="gameboard" width="360" height="180" style="border:1px solid #d3d3d3;"></canvas>
 
-<script>
-function* cellGenerator(xcells, xwidth, ycells, ywidth ) {
-    // xcells, ycells: number of cells to create in each dimension
-    // xwidth, ywidth: size of each cell in pixels for each dimension
-    for ( let xindex = 0; xindex < xcells; ++xindex) {
-        for ( let yindex = 0; yindex < ycells; ++yindex ) {
-            yield [ xindex * xwidth, yindex * ywidth, xwidth, ywidth ]
+    <script>
+        let mouseX = 0, mouseY = 0;
+        const gameboard = document.getElementById("gameboard");
+
+        function getMousePosition(area, evt) {
+            // Where is the mouse relative to our canvas?
+            let rect = area.getBoundingClientRect(), // abs. size of element
+                scaleX = area.width / rect.width, // relationship of bitmap vs. element for x
+                scaleY = area.height / rect.height;  //  " " for y
+            return [
+                (evt.clientX - rect.left) * scaleX,
+                (evt.clientY - rect.top) * scaleY
+            ];
         }
-    }
-}
 
-const c = document.getElementById("gameboard");
-const ctx = c.getContext("2d");
-for ( const r of cellGenerator(3,20,3,20) ) {
-    ctx.beginPath();
-    ctx.rect(...r);
-    ctx.stroke();
-}
-</script>
+        function handleMouseMove(v) {
+            [mouseX, mouseY] = getMousePosition(gameboard, v);
+            console.log(`  mouse(${mouseX},${mouseY})`)
+        }
+
+        function* cellGenerator(xcells, xwidth, ycells, ywidth) {
+            // xcells, ycells: number of cells to create in each dimension
+            // xwidth, ywidth: size of each cell in pixels for each dimension
+            for (let xindex = 0; xindex < xcells; ++xindex) {
+                for (let yindex = 0; yindex < ycells; ++yindex) {
+                    yield [xindex * xwidth, yindex * ywidth, xwidth, ywidth]
+                }
+            }
+        }
+
+        gameboard.addEventListener("mousemove", handleMouseMove);
+        const ctx = gameboard.getContext("2d");
+        for (const r of cellGenerator(3, 20, 3, 20)) {
+            ctx.beginPath();
+            ctx.rect(...r);
+            ctx.stroke();
+        }
+    </script>
 
 </body>
+
 </html>
