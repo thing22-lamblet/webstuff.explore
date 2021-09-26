@@ -10,21 +10,15 @@ function* cellGenerator(xcells, xwidth, ycells, ywidth ) {
     // xwidth, ywidth: size of each cell in pixels for each dimension
     for ( let xindex = 0; xindex < xcells; ++xindex) {
         for ( let yindex = 0; yindex < ycells; ++yindex ) {
-            yield [
-                xindex * xwidth,
-                yindex * ywidth,
-                (xindex+1) * xwidth,
-                (yindex+1) * ywidth
-            ]
-            yindex += 1;
+            yield [ xindex * xwidth, yindex * ywidth, xwidth, ywidth ]
         }
-        xindex += 1;
     }
 }
 
 var c = document.getElementById("gameboard");
 var ctx = c.getContext("2d");
-for ( const r of cellGenerator(4,20,4,20) ) {
+//for ( const r of cellGenerator(4,20,4,20) ) {
+for ( const r of cellGenerator(3,20,3,20) ) {
     console.log(...r);
     ctx.beginPath();
     ctx.rect(...r);
