@@ -1,53 +1,36 @@
+<!DOCTYPE html>
 <html>
-<title>Anim2.html</title>
+<body>
 
-    <style>
-    #container {
-        width: 400px;
-        height: 400px;
-        position: relative;
-        background: yellow;
-    }
+<canvas id="gameboard" width="360" height="180" style="border:1px solid #d3d3d3;"></canvas>
 
-    #animate {
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        background-color: red;
-    }
-</style>
-
-<body style="color:white;background-color:black">
-    <script>
-        function movethemonke() {
-            const monke = document.getElementById("animate");
-            let pos = 0;
-            clearInterval(null);
-            let id = setInterval(frame, 5);
-            function frame() {
-                if (pos == 350) {
-                    clearInterval(id)
-                        ;
-                } else {
-                    pos++;
-                    monke.style.top = pos + "px";
-                    monke.style.left = pos + "px";
-                }
-            }
+<script>
+function* cellGenerator(xcells, xwidth, ycells, ywidth ) {
+    // xcells, ycells: number of cells to create in each dimension
+    // xwidth, ywidth: size of each cell in pixels for each dimension
+    for ( let xindex = 0; xindex < xcells; ++xindex) {
+        for ( let yindex = 0; yindex < ycells; ++yindex ) {
+            yield [
+                xindex * xwidth,
+                yindex * ywidth,
+                (xindex+1) * xwidth,
+                (yindex+1) * ywidth
+            ]
+            yindex += 1;
         }
+        xindex += 1;
+    }
+}
 
-    </script>
+var c = document.getElementById("gameboard");
+var ctx = c.getContext("2d");
+for ( const r of cellGenerator(4,20,4,20) ) {
+    console.log(...r);
+    ctx.beginPath();
+    ctx.rect(...r);
+    ctx.stroke();
+}
+</script>
 
-    <div id="container">
-        <div id="animate">
-            <img id="monke" src="https://i.pinimg.com/originals/40/53/e7/4053e7002948f8d86f27763375774bff.jpg"></img>
-        </div>
-    </div>
-    <p />
-
-    <button onclick="movethemonke()">
-        the monke mover
-    </button>
 </body>
-
 </html>
