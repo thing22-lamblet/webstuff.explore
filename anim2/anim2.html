@@ -15,11 +15,9 @@ function* cellGenerator(xcells, xwidth, ycells, ywidth ) {
     }
 }
 
-var c = document.getElementById("gameboard");
-var ctx = c.getContext("2d");
-//for ( const r of cellGenerator(4,20,4,20) ) {
+const c = document.getElementById("gameboard");
+const ctx = c.getContext("2d");
 for ( const r of cellGenerator(3,20,3,20) ) {
-    console.log(...r);
     ctx.beginPath();
     ctx.rect(...r);
     ctx.stroke();
