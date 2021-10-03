@@ -1,53 +1,6 @@
 <html>
-<title>Anim2.html</title>
-
-    <style>
-    #container {
-        width: 400px;
-        height: 400px;
-        position: relative;
-        background: yellow;
-    }
-
-    #animate {
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        background-color: red;
-    }
-</style>
-
-<body style="color:white;background-color:black">
-    <script>
-        function movethemonke() {
-            const monke = document.getElementById("animate");
-            let pos = 0;
-            clearInterval(null);
-            let id = setInterval(frame, 5);
-            function frame() {
-                if (pos == 350) {
-                    clearInterval(id)
-                        ;
-                } else {
-                    pos++;
-                    monke.style.top = pos + "px";
-                    monke.style.left = pos + "px";
-                }
-            }
-        }
-
-    </script>
-
-    <div id="container">
-        <div id="animate">
-            <img id="monke" src="https://i.pinimg.com/originals/40/53/e7/4053e7002948f8d86f27763375774bff.jpg"></img>
-        </div>
-    </div>
-    <p />
-
-    <button onclick="movethemonke()">
-        the monke mover
-    </button>
+<body>
+    <canvas id="gameboard" width="1000" height="1000" style="border:1px solid #d3d3d3;"></canvas>
 </body>
 
 </html>
