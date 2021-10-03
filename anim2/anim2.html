@@ -3,7 +3,7 @@
 
 <body>
 
-    <canvas id="gameboard" width="360" height="180" style="border:1px solid #d3d3d3;"></canvas>
+    <canvas id="gameboard" width="1024" height="960" style="border:1px solid #d3d3d3;"></canvas>
 
     <script>
         let mouseX = 0, mouseY = 0;
@@ -37,7 +37,7 @@
 
         gameboard.addEventListener("mousemove", handleMouseMove);
         const ctx = gameboard.getContext("2d");
-        for (const r of cellGenerator(3, 20, 3, 20)) {
+        for (const r of cellGenerator(3, 299, 3, 299)) {
             ctx.beginPath();
             ctx.rect(...r);
             ctx.stroke();
