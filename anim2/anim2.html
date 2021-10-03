@@ -1,6 +1,28 @@
+<!DOCTYPE html>
 <html>
 <body>
-    <canvas id="gameboard" width="1000" height="1000" style="border:1px solid #d3d3d3;"></canvas>
-</body>
 
+<canvas id="gameboard" width="1000" height="1000" style="border:1px solid #d3d3d3;"></canvas>
+
+<script>
+function* cellGenerator(xcells, xwidth, ycells, ywidth ) {
+    // xcells, ycells: number of cells to create in each dimension
+    // xwidth, ywidth: size of each cell in pixels for each dimension
+    for ( let xindex = 0; xindex < xcells; ++xindex) {
+        for ( let yindex = 0; yindex < ycells; ++yindex ) {
+            yield [ xindex * xwidth, yindex * ywidth, xwidth, ywidth ]
+        }
+    }
+}
+
+const c = document.getElementById("gameboard");
+const ctx = c.getContext("2d");
+for ( const r of cellGenerator(3,299,3,299) ) {
+    ctx.beginPath();
+    ctx.rect(...r);
+    ctx.stroke();
+}
+</script>
+
+</body>
 </html>
