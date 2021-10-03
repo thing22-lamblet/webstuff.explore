@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<canvas id="gameboard" width="360" height="180" style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="gameboard" width="1000" height="1000" style="border:1px solid #d3d3d3;"></canvas>
 
 <script>
 function* cellGenerator(xcells, xwidth, ycells, ywidth ) {
@@ -17,7 +17,7 @@ function* cellGenerator(xcells, xwidth, ycells, ywidth ) {
 
 const c = document.getElementById("gameboard");
 const ctx = c.getContext("2d");
-for ( const r of cellGenerator(3,20,3,20) ) {
+for ( const r of cellGenerator(3,299,3,299) ) {
     ctx.beginPath();
     ctx.rect(...r);
     ctx.stroke();
