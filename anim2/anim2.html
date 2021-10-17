@@ -3,15 +3,35 @@
 <body>
     <canvas id="gameboard" width="1000" height="1000" style="border:1px solid #d3d3d3;"></canvas>
     <script>
+        let mouseX = 0, mouseY = 0;
+        function GetMousePosition(area, event) {
+            let rect = area.getBoundingClientRect(),
+                scaleX = area.width / rect.width,
+                scaleY = area.height / rect.height;
+            return [
+                (event.clientX - rect.left) * scaleX,
+                (event.clientY - rect.top) * scaleY
+            ]
+        }
+        function handleMouseMove(v) {
+            [mouseX, mouseY] = GetMousePosition(gameboard, v);
+            console.log(`    mouse ${mouseX}, ${mouseY}`);
+            const c = document.getElementById("gameboard");
+            if (mouseX > 500) {
+                c.style.cursor = "pointer";
+            }
+            else { c.style.cursor = "crosshair" }
+        }
         function GetBocksSize() {
-            return 1000 / Math.sqrt(9)-1;
+            return 1000 / Math.sqrt(9) - 1;
         }
         const c = document.getElementById("gameboard");
+        gameboard.addEventListener("mousemove", handleMouseMove);
         const ctx = c.getContext("2d");
         for (let x = 0; x < 3; ++x) {
             for (let y = 0; y < 3; ++y) {
                 ctx.beginPath();
-                ctx.rect(x * GetBocksSize(),y * GetBocksSize() , GetBocksSize(),GetBocksSize());
+                ctx.rect(x * GetBocksSize(), y * GetBocksSize(), GetBocksSize(), GetBocksSize());
                 ctx.stroke();
             }
         }

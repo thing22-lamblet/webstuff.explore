@@ -4,21 +4,21 @@
 #
 
 cd "/c/Projects/webstuff.explore/anim2"
-if ! test -S "/tmp/vscode-ipc-cc0545bd-8030-47de-b845-7b162f2b79c9.sock"; then
-    echo "ERROR: /tmp/vscode-ipc-cc0545bd-8030-47de-b845-7b162f2b79c9.sock not a socket. Dead session."
+if ! test -S "/tmp/vscode-ipc-19eaff6a-e1b6-43de-9e11-81d604b42956.sock"; then
+    echo "ERROR: /tmp/vscode-ipc-19eaff6a-e1b6-43de-9e11-81d604b42956.sock not a socket. Dead session."
 else
-    export VSCODE_IPC_HOOK_CLI="/tmp/vscode-ipc-cc0545bd-8030-47de-b845-7b162f2b79c9.sock"
-    if ! PATH="/home/thing/.vscode-server/bin/7f6ab5485bbc008386c4386d08766667e155244e/bin:$PATH" codesrv-status; then
+    export VSCODE_IPC_HOOK_CLI="/tmp/vscode-ipc-19eaff6a-e1b6-43de-9e11-81d604b42956.sock"
+    if ! PATH="/home/thing/.vscode-server/bin/ee8c7def80afc00dd6e593ef12f37756d8f504ea/bin:$PATH" codesrv-status; then
         echo "ERROR: dead vscode connection."
-            read -n 1 -p "Delete dead context info /tmp/vscode-ipc-cc0545bd-8030-47de-b845-7b162f2b79c9.sock ? (y/n): "
+            read -n 1 -p "Delete dead context info /tmp/vscode-ipc-19eaff6a-e1b6-43de-9e11-81d604b42956.sock ? (y/n): "
             if [[ $REPLY =~ [yY] ]]; then
-                rm /tmp/vscode-ipc-cc0545bd-8030-47de-b845-7b162f2b79c9.sock
+                rm /tmp/vscode-ipc-19eaff6a-e1b6-43de-9e11-81d604b42956.sock
                 rm .codesrv-connect
             fi
     else
-        alias code=/home/thing/.vscode-server/bin/7f6ab5485bbc008386c4386d08766667e155244e/bin/code
-        PATH=$(pathadd "/home/thing/.vscode-server/bin/7f6ab5485bbc008386c4386d08766667e155244e/bin")
-        echo "OK: the 'code' command will talk to socket \"/tmp/vscode-ipc-cc0545bd-8030-47de-b845-7b162f2b79c9.sock\" now."
+        alias code=/home/thing/.vscode-server/bin/ee8c7def80afc00dd6e593ef12f37756d8f504ea/bin/code
+        PATH=$(pathadd "/home/thing/.vscode-server/bin/ee8c7def80afc00dd6e593ef12f37756d8f504ea/bin")
+        echo "OK: the 'code' command will talk to socket \"/tmp/vscode-ipc-19eaff6a-e1b6-43de-9e11-81d604b42956.sock\" now."
         echo "You can use this command to connect other shells to this code server:"
         echo "   cd /c/Projects/webstuff.explore/anim2; codesrv"
         fi
