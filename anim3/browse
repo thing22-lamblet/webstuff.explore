@@ -1,0 +1,17 @@
+#!/bin/bash
+# Launch browser for this lab
+
+die() {
+    echo "ERROR: $@" >&2
+    exit 1
+}
+
+
+chrome() {
+    "c/Program Files (x86)/Google/Chrome/Application/chrome.exe" "$@"
+}
+
+
+
+npm serve
+
