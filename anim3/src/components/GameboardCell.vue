@@ -1,6 +1,6 @@
 <template>
   <div class="gameboard_cell" v-on:click="select()">
-      <button type="button" v-on:click="select($event)">
+      <button type="button" v-on:click="select($event,row,col)">
         row: {{row}}, col: {{col}}
       </button>
   </div>
@@ -19,10 +19,11 @@ export default {
         }
     },
     methods: {
-        select: function(event) {
+        select: function(event,row,col) {
             // https://stackoverflow.com/a/36968187/237059  On event hookups
-            const targetId = event.currentTarget.id;
-            console.log(targetId);
+
+            const targetId = event?.currentTarget.id;
+            console.log(`targetId=${targetId},row=${row},col=${col}`);
         }
     }
 }
