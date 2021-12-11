@@ -1,6 +1,6 @@
 <template>
   <div class="gameboard_cell" v-on:click="select()">
-      <button type="button" v-on:click="select()">
+      <button type="button" v-on:click="select($event)">
         row: {{row}}, col: {{col}}
       </button>
   </div>
