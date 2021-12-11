@@ -6,7 +6,8 @@
     <div class="boardframe">
         <div v-for='row in boardTileCount.y' :key='row' class='c_row'>
             <div v-for='col in boardTileCount.x' :key='col' class='c_cell'>
-                cell {{ `${row}, ${col}` }}
+                <!-- cell {{ `${row}, ${col}` }} -->
+                <GameboardCell></GameboardCell>
             </div>
         </div>
     </div>
@@ -14,10 +15,15 @@
 </template>
 
 <script>
+import GameboardCell from './GameboardCell.vue'
+
 export default {
   name: 'Gameboard',
   props: {
     msg: String
+  },
+  components: {
+      GameboardCell
   },
   data() {
     return {
