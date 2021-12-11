@@ -4,9 +4,8 @@
     <h1>{{ msg }}</h1>
     <h1>{{ foo }}</h1>
     <div class="boardframe">
-        <div v-for='row in boardTileCount.y' :key='row' class='c_row'>
-            <div v-for='col in boardTileCount.x' :key='col' class='c_cell'>
-                <!-- cell {{ `${row}, ${col}` }} -->
+        <div v-for='col in boardTileCount.x' :key='col' class='c_row'>
+            <div v-for='row in boardTileCount.y' :key='row' class='c_cell'>
                 <GameboardCell :row='row' :col='col' ></GameboardCell>
             </div>
         </div>
@@ -28,7 +27,7 @@ export default {
   data() {
     return {
         boardTileCount: { x:8, y:8 },
-        foo: "hello"
+        foo: "Chess?"
     };
   }
 }

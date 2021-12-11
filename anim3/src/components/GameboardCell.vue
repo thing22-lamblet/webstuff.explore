@@ -1,6 +1,6 @@
 <template>
-  <div class="gameboard_cell">
-      gmcell
+  <div class="gameboard_cell" v-on:click='console.alert("foo")'>
+      row: {{row}}, col: {{col}}
   </div>
 </template>
 

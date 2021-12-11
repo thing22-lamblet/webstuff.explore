@@ -22,3 +22,7 @@ gpa "Adds do-nothing GameboardCell.vue, this runs"
 gs
 #1639251540
 gs
+#1639251565
+gpa GameboardCell coordinate initialization solved
+#1639252252
+gs
