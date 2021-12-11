@@ -1,6 +1,8 @@
 <template>
-  <div class="gameboard_cell" v-on:click='console.alert("foo")'>
-      row: {{row}}, col: {{col}}
+  <div class="gameboard_cell" v-on:click="select()">
+      <button type="button" v-on:click="select()">
+        row: {{row}}, col: {{col}}
+      </button>
   </div>
 </template>
 
@@ -14,6 +16,13 @@ export default {
     data() {
         return {
             state: 'none'
+        }
+    },
+    methods: {
+        select: function(event) {
+            // https://stackoverflow.com/a/36968187/237059  On event hookups
+            const targetId = event.currentTarget.id;
+            console.log(targetId);
         }
     }
 }
