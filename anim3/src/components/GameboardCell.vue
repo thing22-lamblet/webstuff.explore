@@ -5,4 +5,16 @@
 </template>
 
 <script>
+export default {
+    //name: 'GameboardCell',
+    props: {
+        row: Number,
+        col: Number
+    },
+    data() {
+        return {
+            state: 'none'
+        }
+    }
+}
 </script>

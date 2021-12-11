@@ -16,3 +16,7 @@ gs
 ga .
 #1639249282
 gs
+#1639249311
+gpa "Adds do-nothing GameboardCell.vue, this runs"
+#1639251359
+gs

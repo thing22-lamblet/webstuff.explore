@@ -7,7 +7,7 @@
         <div v-for='row in boardTileCount.y' :key='row' class='c_row'>
             <div v-for='col in boardTileCount.x' :key='col' class='c_cell'>
                 <!-- cell {{ `${row}, ${col}` }} -->
-                <GameboardCell></GameboardCell>
+                <GameboardCell :row=3 :col=9 ></GameboardCell>
             </div>
         </div>
     </div>
