@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .gameboard_button {
     width: 100%;
     height: 100%;
