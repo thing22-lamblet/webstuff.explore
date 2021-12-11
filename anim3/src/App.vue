@@ -1,6 +1,6 @@
 <template>
   <!-- <Gameboard msg="Tile gameboard"></Gameboard> -->
-  <Gameboard id="app" msg="Tile gameboard"></Gameboard>
+  <Gameboard id="app" model=model gameName="Chesster"></Gameboard>
 </template>
 
 <script>
@@ -10,6 +10,11 @@ export default {
   name: 'App',
   components: {
     Gameboard
+  },
+  data() {
+      return  {
+          name: "FooFighter"
+      }
   }
 }
 </script>

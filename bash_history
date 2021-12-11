@@ -46,3 +46,11 @@ tig
 exit
 #1639264399
 gs
+#1639264452
+gpa "Milestone: Button per cell, full-size of div, click emits button location in console"
+#1639264455
+exit
+#1639263325
+loop gpa
+#1639264845
+gs
