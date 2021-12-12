@@ -1,8 +1,7 @@
 <template>
     <button
-        class="gameboard_button v-model=@bg_style "
+        :class='bg_style'
         type="button"
-
         v-on:click="select($event, row, col)"
     >
         row: {{ row }}, col: {{ col }}
@@ -14,6 +13,7 @@ export default {
     props: {
         row: Number,
         col: Number,
+        model: Object
     },
     data() {
         return {
@@ -23,14 +23,14 @@ export default {
     methods: {
         select: function (event, row, col) {
             // https://stackoverflow.com/a/36968187/237059  On event hookups
-
             const targetId = event?.currentTarget.id;
             console.log(`btn.targetId=${targetId},row=${row},col=${col}`);
         }
     },
     computed: {
         bg_style() {
-            return 'dark_square';
+
+            return "dark_square foo" ;
         }
     }
 };

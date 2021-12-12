@@ -1,0 +1,18 @@
+# taskrc for chesster
+# vim: filetype=sh :
+
+# If someone does a raw "source taskrc", we ensure that $taskrc_dir gets defined anyway
+[[ -z $taskrc_dir && -f taskrc ]] && export taskrc_dir=$PWD
+
+type -t localhist_set >/dev/null && { localhist_set /c/Projects/taskrc-kit/bash_history;  echo "HISTFILE is $HISTFILE"; }
+
+help_chesster() {
+    #Help help for this project
+    cat <<EOF
+Dev setup: 
+    - Install Vuter vscode plugin (this is a temp
+        substitute for Vetur, which is on holiday!)
+    - Run windows back-end for vscode, and windows node/npm/nvm
+Run server:  npm run serve
+EOF
+}
