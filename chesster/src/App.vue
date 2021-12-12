@@ -14,11 +14,13 @@ export default {
   data() {
     return {
       game_model: {
-        title: "Chesster",
+        title: "Wololololo",
         boardDimensions: { rows: 8, cols: 8 },
         isOddSquare: function(row, col) {
-          console.log(row,col);
-          return false;
+          let Funky_shoe = (row%2) * this.boardDimensions.rows + col;
+          let odd = Funky_shoe%2;
+          return odd;
+
         }
       }
     };
