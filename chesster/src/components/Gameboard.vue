@@ -24,7 +24,6 @@ export default {
   },
   data() {
     return {
-        boardTileCount: { x:8, y:8 },
         foo: "Chess?"
     };
   }

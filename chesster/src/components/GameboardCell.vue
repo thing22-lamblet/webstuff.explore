@@ -4,7 +4,8 @@
         type="button"
         v-on:click="select($event, row, col)"
     >
-        row: {{ row }}, col: {{ col }}
+        col: {{ col }}<br />
+        row: {{ row }}
     </button>
 </template>
 
@@ -29,8 +30,8 @@ export default {
     },
     computed: {
         bg_style() {
-
-            return "dark_square foo" ;
+            let is_odd=this.game_model.isOddSquare(this.row,this.col);
+            return "gameboard_button " + (is_odd ?  "dark_square": "light_square") ;
         }
     }
 };
@@ -43,9 +44,9 @@ export default {
     display: block;
 }
 .dark_square {
-    background-color: blue;
+    background-color: rgba(164, 224, 235, 0.513);
 }
 .light_square {
-    background-color: red;
+    background-color: rgb(235, 223, 62);
 }
 </style>

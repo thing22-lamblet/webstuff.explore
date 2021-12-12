@@ -1,25 +1,28 @@
 <template>
   <!-- <Gameboard msg="Tile gameboard"></Gameboard> -->
-  <Gameboard id="app" :game_model='game_model' gameName="Chesster"></Gameboard>
+  <Gameboard id="app" :game_model="game_model" gameName="Chesster"></Gameboard>
 </template>
 
 <script>
-import Gameboard from './components/Gameboard.vue'
+import Gameboard from "./components/Gameboard.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Gameboard
   },
   data() {
-      return  {
-          game_model: {
-            title: 'Chesster',
-            boardDimensions: { rows: 8, cols: 8 }
-            }
+    return {
+      game_model: {
+        title: "Chesster",
+        boardDimensions: { rows: 8, cols: 8 },
+        isOddSquare: function(row, col) {
+          return ((this.boardDimensions.cols + 1) * row + col) % 2;
+        }
       }
+    };
   }
-}
+};
 </script>
 
 <style>
