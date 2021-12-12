@@ -13,7 +13,7 @@ export default {
     props: {
         row: Number,
         col: Number,
-        model: Object
+        game_model: Object
     },
     data() {
         return {

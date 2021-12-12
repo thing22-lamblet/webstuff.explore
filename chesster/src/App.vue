@@ -1,6 +1,6 @@
 <template>
   <!-- <Gameboard msg="Tile gameboard"></Gameboard> -->
-  <Gameboard id="app" model=model gameName="Chesster"></Gameboard>
+  <Gameboard id="app" :game_model='game_model' gameName="Chesster"></Gameboard>
 </template>
 
 <script>
@@ -13,7 +13,10 @@ export default {
   },
   data() {
       return  {
-          name: "FooFighter"
+          game_model: {
+            title: 'Chesster',
+            boardDimensions: { rows: 8, cols: 8 }
+            }
       }
   }
 }

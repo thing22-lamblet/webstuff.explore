@@ -1,10 +1,10 @@
 <template>
   <div class="gameboard">
-    <h1>{{ gameName }}</h1>
+    <h1>{{ game_model['title'] }}</h1>
     <div class="boardframe">
-        <div v-for='col in boardTileCount.x' :key='col' class='c_row'>
-            <div v-for='row in boardTileCount.y' :key='row' class='c_cell'>
-                <GameboardCell :row='row' :col='col' ></GameboardCell>
+        <div v-for='col in game_model.boardDimensions.cols' :key='col' class='c_row'>
+            <div v-for='row in game_model.boardDimensions.rows' :key='row' class='c_cell'>
+                <GameboardCell :game_model='game_model' :row='row' :col='col' ></GameboardCell>
             </div>
         </div>
     </div>
@@ -17,8 +17,7 @@ import GameboardCell from './GameboardCell.vue'
 export default {
   name: 'Gameboard',
   props: {
-    gameName: String,
-    model: Object
+    game_model: Object
   },
   components: {
       GameboardCell
