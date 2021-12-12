@@ -17,7 +17,8 @@ export default {
         title: "Chesster",
         boardDimensions: { rows: 8, cols: 8 },
         isOddSquare: function(row, col) {
-          return ((this.boardDimensions.cols + 1) * row + col) % 2;
+          console.log(row,col);
+          return false;
         }
       }
     };

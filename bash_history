@@ -8,37 +8,3 @@ cd /mnt/c/Projects/webstuff.explore # cdmark
 cd /cygdrive/c/Projects/webstuff.explore # cdmark
 #1639311800
 gpa2() {    localhist l; git_commit_sync; } # 
-#1639311802
-gpa2
-#1639311926
-cd chess
-#1639311928
-code .
-#1639312054
-lr
-#1639314234
-lh j
-#1639314234
-lh j
-#1639314247
-gs
-#1639314254
-ga taskrc 
-#1639314254
-ga taskrc 
-#1639314271
-gs
-#1639319382
-gs
-#1639319386
-gdf
-#1639319394
-gpa
-#1639319411
-gs
-#1639319412
-lr
-#1639319412
-lr
-#1639325389
-gdf
