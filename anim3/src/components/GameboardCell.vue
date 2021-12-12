@@ -1,7 +1,8 @@
 <template>
     <button
-        class="gameboard_button"
+        class="gameboard_button v-model=@bg_style "
         type="button"
+
         v-on:click="select($event, row, col)"
     >
         row: {{ row }}, col: {{ col }}
@@ -27,6 +28,11 @@ export default {
             console.log(`btn.targetId=${targetId},row=${row},col=${col}`);
         }
     },
+    computed: {
+        bg_style() {
+            return 'dark_square';
+        }
+    }
 };
 </script>
 
@@ -35,5 +41,11 @@ export default {
     width: 100%;
     height: 100%;
     display: block;
+}
+.dark_square {
+    background-color: blue;
+}
+.light_square {
+    background-color: red;
 }
 </style>
