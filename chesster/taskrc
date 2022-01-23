@@ -9,10 +9,14 @@ type -t localhist_set >/dev/null && { localhist_set /c/Projects/taskrc-kit/bash_
 help_chesster() {
     #Help help for this project
     cat <<EOF
-Dev setup: 
+Dev setup:
     - Install Vuter vscode plugin (this is a temp
         substitute for Vetur, which is on holiday!)
-    - Run windows back-end for vscode, and windows node/npm/nvm
+    - Run the Windows back-end for vscode
+    - Run Windows version of nodejs 16.13.2
+    - Remove node_modules+package-lock.json, then "npm install"
+    - Just use the msi installer, don't check the box for C++ components
+
 Run server:  npm run serve
 EOF
 }
