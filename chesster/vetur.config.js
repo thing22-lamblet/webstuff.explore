@@ -1,4 +1,4 @@
-/ vetur.config.js
+// vetur.config.js
 /** @type {import('vls').VeturConfig} */
 module.exports = {
   // **optional** default: `{}`
