@@ -17,9 +17,11 @@ export default {
         title: "Wololololo",
         boardDimensions: { rows: 8, cols: 8 },
         isOddSquare: function(row, col) {
-          let Funky_shoe = (row%2) * this.boardDimensions.rows + col;
-          let odd = Funky_shoe%2;
-          return odd;
+          let Funky_shoe = (row%2);
+          let Funky_poo = (col%2);
+          if (Funky_poo) {return Funky_shoe}
+          else {return !Funky_shoe;}
+
 
         }
       }
