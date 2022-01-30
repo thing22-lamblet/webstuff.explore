@@ -17,6 +17,7 @@ export default {
         title: "Wololololo",
         boardDimensions: { rows: 8, cols: 8 },
         isOddSquare: function(row, col) {
+          // This almost works, but cell colors are not alternating across rows
           let Funky_shoe = (row%2) * this.boardDimensions.rows + col;
           let odd = Funky_shoe%2;
           return odd;
