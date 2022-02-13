@@ -4,7 +4,9 @@
 </template>
 
 <script>
+/* eslint-disable no-unused-vars */
 import Gameboard from "./components/Gameboard.vue";
+import {defaultPieceLocations, PIECE_TYPES, GAME_STATES,makePieceLocation } from "./ChessLogic.js";
 
 export default {
   name: "App",
@@ -25,13 +27,16 @@ export default {
           else {
               return ! odd_col;
           }
-
         },
-        PIECE_TYPES: { NONE:0, PAWN:1, ROOK:2, KNIGHT:3, BISHOP:4, QUEEN:5, KING:6 },
-        GAME_STATES: { INIT:0, TURN_1:1, TURN_2:2, DONE:99 },
         currentGameState: this.INIT,
+        pieceLocations: undefined,
         setupBoard: function() {
+            // Initializes the state of pieceLocations for play.
             console.log("setupBoard called, currentGameState is $`this.currentGameState`");
+            this.pieceLocations=defaultPieceLocations();
+        },
+        getPieceAtLocation( row, col ) {
+            return this.pieceLocations ? this.pieceLocations.find( (loc) => loc.row==row && loc.col==col  ) : undefined;
         }
       }
     };
