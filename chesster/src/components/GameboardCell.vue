@@ -5,11 +5,14 @@
         v-on:click="select($event, row, col)"
     >
         col: {{ col }}<br />
-        row: {{ row }}
+        row: {{ row }}<br />
+        piece: {{ this.piece }}
     </button>
 </template>
 
 <script>
+/* eslint-disable no-unused-vars */
+import {PIECE_TYPES} from '../ChessLogic.js'
 export default {
     props: {
         row: Number,
@@ -32,6 +35,14 @@ export default {
         bg_style() {
             let is_odd=this.game_model.isOddSquare(this.row,this.col);
             return "gameboard_button " + (is_odd ?  "dark_square": "light_square") ;
+        },
+        piece() {
+            let pc = this.$root.game_model.getPieceAtLocation(this.row, this.col);
+            if (pc) {
+                console.log(`${this.row},${this.col} -> ${pc.piece_type}`);
+                return pc.piece_type;
+            }
+            return '[--]';
         }
     }
 };

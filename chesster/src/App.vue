@@ -35,6 +35,9 @@ export default {
             console.log("setupBoard called, currentGameState is $`this.currentGameState`");
             this.pieceLocations=defaultPieceLocations();
         },
+        getPieceAtLocation( row, col ) {
+            return this.pieceLocations ? this.pieceLocations.find( (loc) => loc.row==row && loc.col==col  ) : undefined;
+        }
       }
     };
   }
