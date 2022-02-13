@@ -22,11 +22,16 @@ export default {
   components: {
       GameboardCell
   },
+  mounted: function() {
+      this.$root.game_model.setupBoard();
+      console.log("Gameboard.mounted() invoked");
+  },
   data() {
     return {
         foo: "Chess?"
     };
-  }
+  },
+
 }
 </script>
 
