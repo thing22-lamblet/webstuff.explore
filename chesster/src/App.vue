@@ -14,10 +14,15 @@ export default {
   data() {
     return {
       game_model: {
-        title: "Chesster",
+        title: "Wololololo",
         boardDimensions: { rows: 8, cols: 8 },
         isOddSquare: function(row, col) {
-          return ((this.boardDimensions.cols + 1) * row + col) % 2;
+          let Funky_shoe = (row%2);
+          let Funky_poo = (col%2);
+          if (Funky_poo) {return Funky_shoe}
+          else {return !Funky_shoe;}
+
+
         }
       }
     };

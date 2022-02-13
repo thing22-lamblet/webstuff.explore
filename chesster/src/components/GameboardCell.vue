@@ -44,9 +44,11 @@ export default {
     display: block;
 }
 .dark_square {
-    background-color: rgba(164, 224, 235, 0.513);
+    background-color: black;
+    color:white;
 }
 .light_square {
-    background-color: rgb(235, 223, 62);
+    background-color: white;
+    color: black;
 }
 </style>
