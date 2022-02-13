@@ -42,6 +42,7 @@ export default {
     width: 100%;
     height: 100%;
     display: block;
+    font-size: .5em;
 }
 .dark_square {
     background-color: black;
