@@ -6,6 +6,7 @@
 
 type -t localhist_set >/dev/null && { localhist_set /c/Projects/taskrc-kit/bash_history;  echo "HISTFILE is $HISTFILE"; }
 
+
 help_chesster() {
     #Help help for this project
     cat <<EOF
